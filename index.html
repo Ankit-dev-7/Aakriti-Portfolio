@@ -1453,7 +1453,6 @@
               ></video>
               <div class="play-icon" id="play-icon-1" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
-              <div class="video-tag">Lifestyle</div>
             </div>
           </div>
           <!-- Video Card 2 -->
@@ -1469,34 +1468,51 @@
               ></video>
               <div class="play-icon" id="play-icon-2" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
-              <div class="video-tag">Entertainment</div>
             </div>
           </div>
           <!-- Video Card 3 -->
-          <div class="video-card">
+          <div class="video-card" id="video-card-3">
             <div class="video-placeholder">
-              <div class="video-thumb-bg video-thumb-3"></div>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <video
+                id="video-3"
+                src="Video 3.mp4"
+                loop
+                playsinline
+                preload="metadata"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);cursor:pointer;"
+              ></video>
+              <div class="play-icon" id="play-icon-3" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
-              <div class="video-tag">Trending</div>
             </div>
           </div>
           <!-- Video Card 4 -->
-          <div class="video-card">
+          <div class="video-card" id="video-card-4">
             <div class="video-placeholder">
-              <div class="video-thumb-bg video-thumb-4"></div>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <video
+                id="video-4"
+                src="Video 4.mp4"
+                loop
+                playsinline
+                preload="metadata"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);cursor:pointer;"
+              ></video>
+              <div class="play-icon" id="play-icon-4" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
-              <div class="video-tag">Daily Vlog</div>
             </div>
           </div>
           <!-- Video Card 5 -->
-          <div class="video-card">
+          <div class="video-card" id="video-card-5">
             <div class="video-placeholder">
-              <div class="video-thumb-bg video-thumb-5"></div>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <video
+                id="video-5"
+                src="Video 5.mp4"
+                loop
+                playsinline
+                preload="metadata"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);cursor:pointer;"
+              ></video>
+              <div class="play-icon" id="play-icon-5" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
-              <div class="video-tag">Fashion</div>
             </div>
           </div>
         </div>
@@ -1672,41 +1688,39 @@
 
   <script>
     // =============================================
-    // VIDEO CARD — Click to play/pause
+    // VIDEO CARDS — Click to play/pause (one at a time)
     // =============================================
-    const video1 = document.getElementById('video-1');
-    const playIcon1 = document.getElementById('play-icon-1');
+    const videoPlayers = [
+      { video: document.getElementById('video-1'), icon: document.getElementById('play-icon-1') },
+      { video: document.getElementById('video-2'), icon: document.getElementById('play-icon-2') },
+      { video: document.getElementById('video-3'), icon: document.getElementById('play-icon-3') },
+      { video: document.getElementById('video-4'), icon: document.getElementById('play-icon-4') },
+      { video: document.getElementById('video-5'), icon: document.getElementById('play-icon-5') },
+    ];
 
-    if (video1 && playIcon1) {
-      video1.addEventListener('click', () => {
-        if (video1.paused) {
-          video1.play();
-          playIcon1.style.opacity = '0';
-          playIcon1.style.pointerEvents = 'none';
-        } else {
-          video1.pause();
-          playIcon1.style.opacity = '1';
-          playIcon1.style.pointerEvents = 'none';
+    function pauseAllExcept(activeVideo) {
+      videoPlayers.forEach(({ video, icon }) => {
+        if (video && video !== activeVideo && !video.paused) {
+          video.pause();
+          video.currentTime = 0;
+          if (icon) { icon.style.opacity = '1'; }
         }
       });
     }
 
-    const video2 = document.getElementById('video-2');
-    const playIcon2 = document.getElementById('play-icon-2');
-
-    if (video2 && playIcon2) {
-      video2.addEventListener('click', () => {
-        if (video2.paused) {
-          video2.play();
-          playIcon2.style.opacity = '0';
-          playIcon2.style.pointerEvents = 'none';
+    videoPlayers.forEach(({ video, icon }) => {
+      if (!video || !icon) return;
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          pauseAllExcept(video);
+          video.play();
+          icon.style.opacity = '0';
         } else {
-          video2.pause();
-          playIcon2.style.opacity = '1';
-          playIcon2.style.pointerEvents = 'none';
+          video.pause();
+          icon.style.opacity = '1';
         }
       });
-    }
+    });
 
     // =============================================
     // NAVBAR — Hamburger Toggle
