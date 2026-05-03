@@ -1441,19 +1441,33 @@
         </div>
         <div class="videos-grid">
           <!-- Video Card 1 -->
-          <div class="video-card">
+          <div class="video-card" id="video-card-1">
             <div class="video-placeholder">
-              <div class="video-thumb-bg video-thumb-1"></div>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <video
+                id="video-1"
+                src="Video 1.mp4"
+                loop
+                playsinline
+                preload="metadata"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);cursor:pointer;"
+              ></video>
+              <div class="play-icon" id="play-icon-1" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
               <div class="video-tag">Lifestyle</div>
             </div>
           </div>
           <!-- Video Card 2 -->
-          <div class="video-card">
+          <div class="video-card" id="video-card-2">
             <div class="video-placeholder">
-              <div class="video-thumb-bg video-thumb-2"></div>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <video
+                id="video-2"
+                src="Video 2.mp4"
+                loop
+                playsinline
+                preload="metadata"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);cursor:pointer;"
+              ></video>
+              <div class="play-icon" id="play-icon-2" style="pointer-events:none;"><i class="fas fa-play"></i></div>
               <div class="video-label">@aakriti__aryal</div>
               <div class="video-tag">Entertainment</div>
             </div>
@@ -1657,6 +1671,43 @@
   </button>
 
   <script>
+    // =============================================
+    // VIDEO CARD — Click to play/pause
+    // =============================================
+    const video1 = document.getElementById('video-1');
+    const playIcon1 = document.getElementById('play-icon-1');
+
+    if (video1 && playIcon1) {
+      video1.addEventListener('click', () => {
+        if (video1.paused) {
+          video1.play();
+          playIcon1.style.opacity = '0';
+          playIcon1.style.pointerEvents = 'none';
+        } else {
+          video1.pause();
+          playIcon1.style.opacity = '1';
+          playIcon1.style.pointerEvents = 'none';
+        }
+      });
+    }
+
+    const video2 = document.getElementById('video-2');
+    const playIcon2 = document.getElementById('play-icon-2');
+
+    if (video2 && playIcon2) {
+      video2.addEventListener('click', () => {
+        if (video2.paused) {
+          video2.play();
+          playIcon2.style.opacity = '0';
+          playIcon2.style.pointerEvents = 'none';
+        } else {
+          video2.pause();
+          playIcon2.style.opacity = '1';
+          playIcon2.style.pointerEvents = 'none';
+        }
+      });
+    }
+
     // =============================================
     // NAVBAR — Hamburger Toggle
     // =============================================
