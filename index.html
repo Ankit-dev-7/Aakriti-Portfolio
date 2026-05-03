@@ -6,10 +6,10 @@
   <meta name="description" content="Aakriti Aryal — Lifestyle and entertainment content creator based in Nepal, known for engaging and relatable short-form videos. Available for brand collaborations and promotions.">
   <title>Aakriti Aryal | Content Creator &amp; Digital Personality</title>
 
-  <!-- Google Fonts: Poppins -->
+  <!-- Google Fonts: Poppins + Great Vibes (script) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -19,42 +19,45 @@
        DESIGN TOKENS — CSS Custom Properties
        ============================================= */
     :root {
-      /* Backgrounds — deep purple-black */
-      --bg-primary:    #07060f;
-      --bg-secondary:  #0d0b1a;
-      --bg-card:       #120f22;
-      --bg-card-hover: #1a1630;
+      /* Backgrounds — premium dark purple hierarchy */
+      --bg-primary:    #0b0815;
+      --bg-secondary:  #141028;
+      --bg-card:       #1c1635;
+      --bg-card-hover: #231d42;
 
-      /* Lavender accent palette */
-      --accent-rose:    #b48ef0;   /* soft lavender-violet */
-      --accent-blush:   #d4b8ff;   /* light lilac */
+      /* Lavender palette — NO pink/red */
+      --accent-rose:    #c9a8ff;   /* primary lavender */
+      --accent-blush:   #e6d6ff;   /* light lavender */
       --accent-lavender:#c9a8ff;   /* true lavender */
-      --accent-deep:    #8b5cf6;   /* deep violet */
+      --accent-mid:     #a87cff;   /* mid lavender */
+      --accent-deep:    #7a4de8;   /* deep violet */
       --accent-primary: var(--accent-rose);
 
-      /* Gradient accent — lavender to soft pink-lilac */
-      --gradient-accent:       linear-gradient(135deg, #b48ef0 0%, #e0aaff 100%);
-      --gradient-accent-hover: linear-gradient(135deg, #c9a8ff 0%, #f0d0ff 100%);
-      --gradient-accent-deep:  linear-gradient(135deg, #8b5cf6 0%, #b48ef0 100%);
+      /* Gradients — clean lavender only */
+      --gradient-accent:       linear-gradient(135deg, #7a4de8 0%, #c9a8ff 100%);
+      --gradient-accent-soft:  linear-gradient(135deg, #c9a8ff 0%, #e6d6ff 100%);
+      --gradient-accent-hover: linear-gradient(135deg, #8f5ff0 0%, #d4b8ff 100%);
+      --gradient-accent-deep:  linear-gradient(135deg, #5c35c0 0%, #7a4de8 100%);
 
       /* Text */
       --text-primary:   #f0eeff;
       --text-secondary: #9b8fc0;
       --text-muted:     #4e4570;
 
-      /* Gradients */
-      --gradient-hero:  radial-gradient(ellipse at 75% 40%, rgba(180, 142, 240, 0.18) 0%, transparent 55%),
-                        radial-gradient(ellipse at 15% 75%, rgba(139, 92, 246, 0.14) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 10%, rgba(224, 170, 255, 0.08) 0%, transparent 40%),
-                        linear-gradient(180deg, #07060f 0%, #0f0820 100%);
-      --gradient-stats: linear-gradient(135deg, #0d0b1a 0%, #160d2e 100%);
-      --gradient-card:  linear-gradient(145deg, #120f22, #1a1630);
+      /* Section backgrounds */
+      --gradient-hero:  radial-gradient(ellipse at 80% 30%, rgba(122, 77, 232, 0.18) 0%, transparent 55%),
+                        radial-gradient(ellipse at 10% 80%, rgba(168, 124, 255, 0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 5%,  rgba(201, 168, 255, 0.07) 0%, transparent 40%),
+                        linear-gradient(180deg, #0b0815 0%, #110a20 100%);
+      --gradient-stats: linear-gradient(135deg, #141028 0%, #1a1035 100%);
+      --gradient-card:  linear-gradient(145deg, #1c1635, #231d42);
 
-      /* Glow / shadow */
-      --glow-accent:    0 0 30px rgba(180, 142, 240, 0.35);
-      --glow-deep:      0 0 40px rgba(139, 92, 246, 0.3);
-      --shadow-card:    0 4px 32px rgba(0, 0, 0, 0.6);
-      --shadow-hover:   0 12px 48px rgba(180, 142, 240, 0.3);
+      /* Glow / shadow — lavender only */
+      --glow-accent:    0 0 40px rgba(201, 168, 255, 0.25);
+      --glow-deep:      0 0 50px rgba(122, 77, 232, 0.3);
+      --glow-soft:      0 0 25px rgba(201, 168, 255, 0.15);
+      --shadow-card:    0 4px 32px rgba(0, 0, 0, 0.7);
+      --shadow-hover:   0 12px 48px rgba(201, 168, 255, 0.2);
 
       /* Typography */
       --font-family:    'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -116,27 +119,29 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(7, 6, 15, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(180, 142, 240, 0.12);
+      background: rgba(11, 8, 21, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 168, 255, 0.12);
       transition: var(--transition-fast);
     }
 
     .nav-brand {
-      font-size: 1.25rem;
-      font-weight: var(--font-bold);
-      background: var(--gradient-accent);
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      background: linear-gradient(135deg, #c9a8ff 0%, #e6d6ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-decoration: none;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
+      filter: drop-shadow(0 0 8px rgba(201, 168, 255, 0.4));
       transition: var(--transition-fast);
     }
 
     .nav-brand:hover {
-      opacity: 0.85;
+      filter: drop-shadow(0 0 14px rgba(201, 168, 255, 0.65));
     }
 
     .nav-links {
@@ -185,9 +190,9 @@
     }
 
     .nav-cta:hover {
-      opacity: 0.85 !important;
-      transform: translateY(-1px);
-      box-shadow: var(--glow-accent);
+      opacity: 0.9 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(122, 77, 232, 0.45), 0 0 0 1px rgba(201, 168, 255, 0.2) !important;
     }
 
     .nav-cta::after {
@@ -227,10 +232,10 @@
         width: 100%;
         flex-direction: column;
         gap: 0;
-        background: rgba(7, 6, 15, 0.97);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(180, 142, 240, 0.12);
+        background: rgba(11, 8, 21, 0.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(201, 168, 255, 0.12);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
@@ -289,20 +294,20 @@
     }
 
     .hero-orb-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(180, 142, 240, 0.22) 0%, transparent 70%);
-      top: -150px;
-      right: -150px;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(122, 77, 232, 0.2) 0%, transparent 70%);
+      top: -180px;
+      right: -180px;
       animation-delay: 0s;
     }
 
     .hero-orb-2 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
-      bottom: -100px;
-      left: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(201, 168, 255, 0.14) 0%, transparent 70%);
+      bottom: -120px;
+      left: -120px;
       animation-delay: -3s;
     }
 
@@ -331,10 +336,11 @@
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #1a1630, #2a1a50);
-      border: 2px solid transparent;
-      background-clip: padding-box;
-      box-shadow: 0 0 0 2px rgba(180, 142, 240, 0.6), 0 0 0 4px rgba(139, 92, 246, 0.2), var(--glow-accent);
+      background: linear-gradient(145deg, #1c1635, #2a1a50);
+      border: 2px solid rgba(201, 168, 255, 0.5);
+      box-shadow: 0 0 0 4px rgba(122, 77, 232, 0.2),
+                  0 0 60px rgba(201, 168, 255, 0.25),
+                  0 0 120px rgba(122, 77, 232, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -371,12 +377,44 @@
     }
 
     .hero-name {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: var(--font-bold);
-      color: var(--text-primary);
       line-height: 1.1;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    /* "Aakriti" — elegant script font */
+    .hero-name-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 400;
+      background: linear-gradient(135deg, #c9a8ff 0%, #e6d6ff 60%, #c9a8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+      text-shadow: none;
+      filter: drop-shadow(0 0 12px rgba(201, 168, 255, 0.55))
+              drop-shadow(0 0 28px rgba(122, 77, 232, 0.35));
+      animation: nameReveal 1.0s ease-out both;
+    }
+
+    /* "Aryal" — Poppins bold, smaller, muted */
+    .hero-name-last {
+      font-family: var(--font-family);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: var(--font-semibold);
+      color: var(--text-secondary);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      animation: nameReveal 1.0s ease-out 0.2s both;
+    }
+
+    @keyframes nameReveal {
+      0%   { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .hero-tagline {
@@ -401,8 +439,8 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(180, 142, 240, 0.08);
-      border: 1px solid rgba(180, 142, 240, 0.28);
+      background: rgba(201, 168, 255, 0.08);
+      border: 1px solid rgba(201, 168, 255, 0.28);
       color: var(--accent-rose);
       font-size: 1.1rem;
       text-decoration: none;
@@ -414,7 +452,7 @@
       border-color: transparent;
       color: #fff;
       transform: translateY(-3px);
-      box-shadow: var(--glow-accent);
+      box-shadow: 0 6px 28px rgba(122, 77, 232, 0.5), 0 0 0 1px rgba(201, 168, 255, 0.2);
     }
 
     /* CTA buttons */
@@ -444,25 +482,27 @@
       background: var(--gradient-accent);
       color: #fff;
       border: none;
+      box-shadow: 0 4px 20px rgba(122, 77, 232, 0.35);
     }
 
     .btn-primary:hover {
       background: var(--gradient-accent-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(201, 168, 255, 0.45), 0 0 0 1px rgba(201, 168, 255, 0.2);
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--accent-rose);
-      border: 1px solid rgba(255, 107, 107, 0.5);
+      color: var(--accent-lavender);
+      border: 1px solid rgba(201, 168, 255, 0.4);
+      box-shadow: inset 0 0 20px rgba(201, 168, 255, 0.03);
     }
 
     .btn-outline:hover {
-      background: rgba(255, 107, 107, 0.1);
-      border-color: var(--accent-rose);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-accent);
+      background: rgba(201, 168, 255, 0.08);
+      border-color: rgba(201, 168, 255, 0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(201, 168, 255, 0.25), 0 0 0 1px rgba(201, 168, 255, 0.15);
     }
 
     /* Scroll indicator */
@@ -477,8 +517,9 @@
     .scroll-dot {
       width: 6px;
       height: 6px;
-      background: var(--gradient-accent);
+      background: var(--accent-lavender);
       border-radius: 50%;
+      box-shadow: 0 0 10px rgba(201, 168, 255, 0.6);
       animation: scrollBounce 2s ease-in-out infinite;
     }
 
@@ -511,6 +552,19 @@
       .hero-actions {
         justify-content: center;
       }
+
+      .hero-name {
+        align-items: center;
+      }
+
+      .hero-name-script {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+      }
+
+      .hero-name-last {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        letter-spacing: 0.2em;
+      }
     }
 
     /* =============================================
@@ -533,7 +587,10 @@
     .section-title {
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: var(--font-bold);
-      color: var(--text-primary);
+      background: linear-gradient(135deg, #f0eeff 0%, #c9a8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
       position: relative;
@@ -546,17 +603,19 @@
       bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 40px;
+      width: 48px;
       height: 2px;
       background: var(--gradient-accent);
       border-radius: 2px;
+      box-shadow: 0 0 12px rgba(122, 77, 232, 0.6);
     }
 
     .section-subtitle {
       font-size: 1rem;
-      color: var(--text-secondary);
+      color: rgba(201, 168, 255, 0.6);
       font-weight: var(--font-light);
       margin-top: 1rem;
+      letter-spacing: 0.02em;
     }
 
     .section-cta {
@@ -564,12 +623,34 @@
       margin-top: 3rem;
     }
 
-    /* Alternating section backgrounds */
-    .videos-section  { background: var(--bg-primary); }
-    .about-section   { background: var(--bg-secondary); }
-    .stats-section   { background: var(--gradient-stats); }
-    .gallery-section { background: var(--bg-primary); }
-    .contact-section { background: var(--bg-secondary); }
+    /* Section backgrounds — clear depth hierarchy */
+    .about-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(201, 168, 255, 0.07);
+      border-bottom: 1px solid rgba(201, 168, 255, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .videos-section {
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(201, 168, 255, 0.07);
+      border-bottom: 1px solid rgba(201, 168, 255, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section {
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
 
     /* =============================================
        VIDEOS SECTION
@@ -585,11 +666,14 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       transition: var(--transition-fast);
+      border: 1px solid rgba(201, 168, 255, 0.1);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .video-card:hover {
-      transform: scale(1.05);
-      box-shadow: var(--shadow-hover);
+      transform: scale(1.04);
+      border-color: rgba(201, 168, 255, 0.3);
+      box-shadow: 0 16px 48px rgba(201, 168, 255, 0.2), 0 0 0 1px rgba(201, 168, 255, 0.15);
     }
 
     .video-placeholder {
@@ -625,16 +709,16 @@
       transform: translate(-50%, -50%);
       width: 52px;
       height: 52px;
-      background: rgba(180, 142, 240, 0.15);
-      border: 1px solid rgba(180, 142, 240, 0.5);
+      background: rgba(201, 168, 255, 0.12);
+      border: 1px solid rgba(201, 168, 255, 0.45);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-rose);
+      color: var(--accent-lavender);
       font-size: 1.1rem;
       transition: var(--transition-fast);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(8px);
     }
 
     .video-card:hover .play-icon {
@@ -642,17 +726,19 @@
       border-color: transparent;
       color: #fff;
       transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 30px rgba(122, 77, 232, 0.5);
     }
 
     .video-label {
       position: absolute;
-      bottom: 2.5rem;
+      bottom: 1rem;
       left: 0;
       right: 0;
       text-align: center;
       font-size: 0.75rem;
-      color: var(--text-secondary);
+      color: rgba(201, 168, 255, 0.7);
       font-weight: var(--font-light);
+      letter-spacing: 0.03em;
     }
 
     .video-tag {
@@ -683,18 +769,38 @@
       justify-content: center;
     }
 
+    /* About text as elevated card */
+    .about-text {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+
     .about-image-placeholder {
       width: 340px;
       height: 420px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, #120f22, #221040);
-      border: 1px solid rgba(180, 142, 240, 0.25);
+      background: linear-gradient(145deg, #1c1635, #231d42);
+      border: 1px solid rgba(201, 168, 255, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      box-shadow: var(--shadow-card), 0 0 60px rgba(139, 92, 246, 0.12);
+      box-shadow: var(--shadow-card),
+                  0 0 60px rgba(122, 77, 232, 0.15),
+                  0 0 0 1px rgba(201, 168, 255, 0.05);
+      transition: var(--transition-fast);
+    }
+
+    .about-image-placeholder:hover {
+      box-shadow: var(--shadow-card),
+                  0 0 80px rgba(122, 77, 232, 0.25),
+                  0 0 0 1px rgba(201, 168, 255, 0.15);
+      border-color: rgba(201, 168, 255, 0.35);
     }
 
     .about-initials {
@@ -715,7 +821,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(180, 142, 240, 0.35) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(201, 168, 255, 0.3) 0%, transparent 70%);
       filter: blur(20px);
     }
 
@@ -743,13 +849,19 @@
     }
 
     .about-tag {
-      background: rgba(180, 142, 240, 0.08);
-      border: 1px solid rgba(180, 142, 240, 0.25);
-      color: var(--text-secondary);
+      background: rgba(201, 168, 255, 0.08);
+      border: 1px solid rgba(201, 168, 255, 0.22);
+      color: var(--accent-lavender);
       padding: 0.35rem 0.85rem;
       border-radius: var(--radius-pill);
       font-size: 0.8rem;
       font-weight: var(--font-regular);
+      transition: var(--transition-fast);
+    }
+
+    .about-tag:hover {
+      background: rgba(201, 168, 255, 0.15);
+      border-color: rgba(201, 168, 255, 0.4);
     }
 
     @media (max-width: 767px) {
@@ -787,7 +899,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.05) 0%, transparent 60%);
+      background: radial-gradient(ellipse at center, rgba(122, 77, 232, 0.06) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -800,8 +912,10 @@
     .stat-item {
       text-align: center;
       padding: 2.5rem 1.5rem;
-      background: rgba(180, 142, 240, 0.04);
-      border: 1px solid rgba(180, 142, 240, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 255, 0.15);
       border-radius: var(--radius-lg);
       transition: var(--transition-fast);
       position: relative;
@@ -812,7 +926,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(180, 142, 240, 0.08) 0%, rgba(139, 92, 246, 0.06) 100%);
+      background: linear-gradient(135deg, rgba(122, 77, 232, 0.08) 0%, rgba(201, 168, 255, 0.05) 100%);
       opacity: 0;
       transition: var(--transition-fast);
     }
@@ -822,9 +936,9 @@
     }
 
     .stat-item:hover {
-      border-color: rgba(180, 142, 240, 0.45);
+      border-color: rgba(201, 168, 255, 0.4);
       transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 12px 48px rgba(201, 168, 255, 0.2), 0 0 0 1px rgba(201, 168, 255, 0.1);
     }
 
     .stat-icon-wrapper {
@@ -898,6 +1012,13 @@
       border-radius: var(--radius-md);
       position: relative;
       cursor: pointer;
+      border: 1px solid rgba(201, 168, 255, 0.1);
+      transition: var(--transition-fast);
+    }
+
+    .gallery-item:hover {
+      border-color: rgba(201, 168, 255, 0.35);
+      box-shadow: 0 8px 32px rgba(201, 168, 255, 0.18);
     }
 
     .gallery-placeholder {
@@ -924,7 +1045,7 @@
     .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(180, 142, 240, 0.5) 100%);
+      background: linear-gradient(135deg, rgba(122, 77, 232, 0.55) 0%, rgba(201, 168, 255, 0.45) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -952,6 +1073,16 @@
       grid-template-columns: 1fr 1.5fr;
       gap: var(--space-lg);
       align-items: start;
+    }
+
+    /* Contact info panel as a card */
+    .contact-info {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
     }
 
     .contact-info-title {
@@ -1012,8 +1143,8 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(180, 142, 240, 0.08);
-      border: 1px solid rgba(180, 142, 240, 0.25);
+      background: rgba(201, 168, 255, 0.08);
+      border: 1px solid rgba(201, 168, 255, 0.25);
       color: var(--accent-rose);
       font-size: 1rem;
       text-decoration: none;
@@ -1032,6 +1163,12 @@
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
     }
 
     .form-group {
@@ -1050,8 +1187,9 @@
 
     .form-group input,
     .form-group textarea {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 255, 0.15);
       border-radius: var(--radius-sm);
       padding: 0.85rem 1rem;
       color: var(--text-primary);
@@ -1071,17 +1209,17 @@
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--accent-rose);
-      box-shadow: 0 0 0 3px rgba(180, 142, 240, 0.15);
+      box-shadow: 0 0 0 3px rgba(201, 168, 255, 0.15);
     }
 
     .form-group input.error,
     .form-group textarea.error {
-      border-color: #f87171;
+      border-color: #c9a060;
     }
 
     .field-error {
       font-size: 0.8rem;
-      color: #f87171;
+      color: #c9a060;
       display: none;
       margin-top: 0.2rem;
     }
@@ -1091,8 +1229,8 @@
     }
 
     .form-success {
-      background: rgba(180, 142, 240, 0.08);
-      border: 1px solid rgba(180, 142, 240, 0.3);
+      background: rgba(201, 168, 255, 0.08);
+      border: 1px solid rgba(201, 168, 255, 0.3);
       border-radius: var(--radius-sm);
       padding: 1rem;
       color: var(--accent-lavender);
@@ -1115,8 +1253,11 @@
        ============================================= */
     .footer {
       background: var(--bg-secondary);
-      border-top: 1px solid rgba(180, 142, 240, 0.12);
+      border-top: 1px solid rgba(201, 168, 255, 0.12);
       padding: 3rem 2rem;
+      box-shadow: 0 -4px 40px rgba(122, 77, 232, 0.08);
+      position: relative;
+      overflow: hidden;
     }
 
     .footer-content {
@@ -1158,8 +1299,8 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(180, 142, 240, 0.06);
-      border: 1px solid rgba(180, 142, 240, 0.18);
+      background: rgba(201, 168, 255, 0.06);
+      border: 1px solid rgba(201, 168, 255, 0.18);
       color: var(--text-secondary);
       font-size: 1rem;
       text-decoration: none;
@@ -1192,7 +1333,7 @@
       border-radius: 50%;
       background: var(--gradient-accent);
       color: #fff;
-      border: none;
+      border: 1px solid rgba(201, 168, 255, 0.3);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -1202,7 +1343,7 @@
       pointer-events: none;
       transform: translateY(20px);
       transition: var(--transition-fast);
-      box-shadow: var(--shadow-card);
+      box-shadow: 0 4px 20px rgba(122, 77, 232, 0.4);
     }
 
     .back-to-top.visible {
@@ -1212,9 +1353,8 @@
     }
 
     .back-to-top:hover {
-      opacity: 0.85;
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 36px rgba(122, 77, 232, 0.6), 0 0 0 1px rgba(201, 168, 255, 0.3);
     }
 
     /* =============================================
@@ -1233,9 +1373,10 @@
 
     /* Focus visible styles for accessibility */
     :focus-visible {
-      outline: 2px solid var(--accent-rose);
+      outline: 2px solid var(--accent-lavender);
       outline-offset: 3px;
       border-radius: 4px;
+      box-shadow: 0 0 12px rgba(201, 168, 255, 0.3);
     }
 
     /* Skip to content link (keyboard accessibility) */
@@ -1268,6 +1409,131 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    /* =============================================
+       DECORATIVE ELEMENTS — Glowing Orbs & Leaves
+       ============================================= */
+
+    /* Global decorative wrapper */
+    .deco-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* ---- Glowing orbs ---- */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    /* Hero orbs */
+    .glow-orb--hero-tl {
+      width: 400px;
+      height: 400px;
+      top: -80px;
+      left: -80px;
+      background: radial-gradient(circle, rgba(122, 77, 232, 0.2) 0%, transparent 70%);
+      animation: orbFloat 8s ease-in-out infinite alternate;
+    }
+
+    .glow-orb--hero-br {
+      width: 300px;
+      height: 300px;
+      bottom: 0;
+      right: 5%;
+      background: radial-gradient(circle, rgba(201, 168, 255, 0.18) 0%, transparent 70%);
+      animation: orbFloat 10s ease-in-out infinite alternate-reverse;
+    }
+
+    /* Gallery orb */
+    .glow-orb--gallery-l {
+      width: 350px;
+      height: 350px;
+      top: 20%;
+      left: -100px;
+      background: radial-gradient(circle, rgba(122, 77, 232, 0.15) 0%, transparent 70%);
+      filter: blur(90px);
+      animation: orbFloat 12s ease-in-out infinite alternate;
+    }
+
+    /* Contact orb */
+    .glow-orb--contact-r {
+      width: 320px;
+      height: 320px;
+      top: 10%;
+      right: -80px;
+      background: radial-gradient(circle, rgba(201, 168, 255, 0.2) 0%, transparent 70%);
+      filter: blur(100px);
+      animation: orbFloat 9s ease-in-out infinite alternate-reverse;
+    }
+
+    /* Stats orb */
+    .glow-orb--stats-c {
+      width: 500px;
+      height: 200px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(122, 77, 232, 0.12) 0%, transparent 70%);
+      filter: blur(60px);
+      animation: orbPulseSubtle 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes orbFloat {
+      0%   { transform: scale(1) translateY(0px); opacity: 0.7; }
+      100% { transform: scale(1.15) translateY(-20px); opacity: 1; }
+    }
+
+    @keyframes orbPulseSubtle {
+      0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* ---- Leaf decorations (SVG inline) ---- */
+    .deco-leaf {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.07;
+      filter: blur(1px);
+    }
+
+    .deco-leaf--hero-tr {
+      top: 40px;
+      right: 40px;
+      width: 180px;
+      transform: rotate(25deg);
+      opacity: 0.06;
+    }
+
+    .deco-leaf--about-bl {
+      bottom: 30px;
+      left: 20px;
+      width: 140px;
+      transform: rotate(-30deg) scaleX(-1);
+      opacity: 0.07;
+    }
+
+    .deco-leaf--gallery-br {
+      bottom: 20px;
+      right: 30px;
+      width: 160px;
+      transform: rotate(15deg);
+      opacity: 0.06;
+    }
+
+    .deco-leaf--footer-tl {
+      top: 10px;
+      left: 30px;
+      width: 120px;
+      transform: rotate(-20deg);
+      opacity: 0.08;
+    }
+
   </style>
 </head>
 <body>
@@ -1302,20 +1568,37 @@
       <div class="hero-bg">
         <div class="hero-orb hero-orb-1"></div>
         <div class="hero-orb hero-orb-2"></div>
+        <!-- Decorative glowing orbs -->
+        <div class="glow-orb glow-orb--hero-tl"></div>
+        <div class="glow-orb glow-orb--hero-br"></div>
       </div>
+      <!-- Decorative leaf top-right -->
+      <svg class="deco-leaf deco-leaf--hero-tr" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M100 280 C100 280 10 200 10 120 C10 50 60 10 100 10 C140 10 190 50 190 120 C190 200 100 280 100 280Z" fill="url(#leafGrad1)"/>
+        <path d="M100 280 C100 280 100 150 100 10" stroke="rgba(201,168,255,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <defs>
+          <linearGradient id="leafGrad1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7a4de8" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#c9a8ff" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+      </svg>
 
       <div class="hero-content">
         <!-- Profile image -->
         <div class="hero-image-wrapper">
           <div class="hero-image-placeholder" aria-label="Aakriti Aryal profile photo">
-            <img src="Photo 1.jpg" alt="Aakriti Aryal" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            <img src="Photo 1.jpg" alt="Aakriti Aryal" style="width:100%;height:100%;object-fit:cover;border-radius:50%;filter:brightness(1.05) contrast(1.05);">
           </div>
         </div>
 
         <!-- Text content -->
         <div class="hero-text">
-          <p class="hero-subtitle">Welcome to my world</p>
-          <h1 class="hero-name">Aakriti Aryal</h1>
+          <p class="hero-subtitle">Just a girl sharing moments 💫</p>
+          <h1 class="hero-name">
+            <span class="hero-name-script">Aakriti</span>
+            <span class="hero-name-last">Aryal</span>
+          </h1>
           <p class="hero-tagline">Content Creator &amp; Digital Personality</p>
 
           <!-- Social icons -->
@@ -1352,12 +1635,25 @@
     <!-- Videos Section -->
     <!-- About Section -->
     <section id="about" class="section about-section animate-on-scroll">
+      <!-- Decorative layer -->
+      <div class="deco-layer">
+        <svg class="deco-leaf deco-leaf--about-bl" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M100 280 C100 280 10 200 10 120 C10 50 60 10 100 10 C140 10 190 50 190 120 C190 200 100 280 100 280Z" fill="url(#leafGrad2)"/>
+          <path d="M100 280 C100 280 100 150 100 10" stroke="rgba(201,168,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <defs>
+            <linearGradient id="leafGrad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#c9a8ff" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#7a4de8" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="section-inner">
         <div class="about-content">
           <!-- Image side -->
           <div class="about-image-wrapper">
             <div class="about-image-placeholder" aria-label="Aakriti Aryal photo">
-              <img src="Photo 2.jpg" alt="Aakriti Aryal" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+              <img src="Photo 2.jpg" alt="Aakriti Aryal" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);filter:brightness(1.05) contrast(1.05);">
             </div>
           </div>
           <!-- Text side -->
@@ -1385,6 +1681,10 @@
 
     <!-- Stats Section -->
     <section id="stats" class="section stats-section animate-on-scroll">
+      <!-- Decorative layer -->
+      <div class="deco-layer">
+        <div class="glow-orb glow-orb--stats-c"></div>
+      </div>
       <div class="section-inner">
         <div class="stats-grid">
           <!-- Followers -->
@@ -1525,6 +1825,20 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="section gallery-section animate-on-scroll">
+      <!-- Decorative layer -->
+      <div class="deco-layer">
+        <div class="glow-orb glow-orb--gallery-l"></div>
+        <svg class="deco-leaf deco-leaf--gallery-br" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M100 280 C100 280 10 200 10 120 C10 50 60 10 100 10 C140 10 190 50 190 120 C190 200 100 280 100 280Z" fill="url(#leafGrad3)"/>
+          <path d="M100 280 C100 280 100 150 100 10" stroke="rgba(201,168,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <defs>
+            <linearGradient id="leafGrad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#a87cff" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#e6d6ff" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="section-inner">
         <div class="section-header">
           <h2 class="section-title">Gallery</h2>
@@ -1573,6 +1887,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section animate-on-scroll">
+      <!-- Decorative layer -->
+      <div class="deco-layer">
+        <div class="glow-orb glow-orb--contact-r"></div>
+      </div>
       <div class="section-inner">
         <div class="section-header">
           <h2 class="section-title">Work With Me</h2>
@@ -1660,6 +1978,16 @@
 
   <!-- Footer -->
   <footer id="footer" class="footer">
+    <!-- Decorative leaf -->
+    <svg class="deco-leaf deco-leaf--footer-tl" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;">
+      <path d="M100 280 C100 280 10 200 10 120 C10 50 60 10 100 10 C140 10 190 50 190 120 C190 200 100 280 100 280Z" fill="url(#leafGrad4)"/>
+      <defs>
+        <linearGradient id="leafGrad4" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#7a4de8" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#c9a8ff" stop-opacity="0.2"/>
+        </linearGradient>
+      </defs>
+    </svg>
     <div class="footer-content">
       <div class="footer-brand">
         <span class="footer-name">Aakriti Aryal</span>
