@@ -1,6 +1,6 @@
 🌸 Aakriti Aryal — Content Creator Portfolio Website
 
-I create this in  the memory of my love towards her.I am very Proude that she is Famous.
+I create this in  the memory of my love towards her.I am very proud that she is Famous.
 
 
 
