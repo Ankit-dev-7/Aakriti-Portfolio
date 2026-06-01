@@ -1447,10 +1447,14 @@
       color: var(--accent-lavender);
       font-size: 0.9rem;
       text-align: center;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+    }
+
+    .form-success:not([hidden]) {
+      display: flex;
     }
 
     /* Error message — mirrors success style with a warm amber tint */
@@ -1462,10 +1466,14 @@
       color: #c9a060;
       font-size: 0.9rem;
       text-align: center;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+    }
+
+    .form-error:not([hidden]) {
+      display: flex;
     }
 
     @media (max-width: 767px) {
