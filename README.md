@@ -10,4 +10,4 @@ The site highlights her digital presence, brand appeal, and collaboration potent
 
 
 
-Some animation are made by AI.
+
